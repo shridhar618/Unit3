@@ -6,9 +6,12 @@ const Navbar = () => {
     <nav>
       <div className="navBar" style={pageStyle}>
 
-        <span className='Home'><Link to="/">Home</Link></span>
-        <span className='AboutUs'><Link to="/about">About Us</Link></span>
-        <span className='Contact'><Link to="/contact">Contact</Link></span>
+        <span className='Home'>
+          <Link to="/">Home</Link></span>
+        <span className='AboutUs'>
+          <Link to="/AboutUs">About Us</Link></span>
+        <span className='Contact'>
+          <Link to="/Contact">Contact</Link></span>
 
       </div>
     </nav>
