@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import Student from "./components/Query_Student";
+import Home from "./components/Query_Home";
 
 function App() {
 
