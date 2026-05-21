@@ -6,7 +6,7 @@ import {
     Link
 } from "react-router-dom";
 
-import Student from "./Student";
+import Student from "./components/Query_Student";
 
 function App() {
 
@@ -14,11 +14,11 @@ function App() {
         <BrowserRouter>
 
             <nav>
-                <Link to="/student?srn=101">SRN 101</Link>
+                <Link to="/student?id=101&name=Alice&age=20">SRN 101</Link>
 
-                <Link to="/student?srn=102">SRN 102</Link>
+                <Link to="/student?id=102&name=Bob&age=21">SRN 102</Link>
 
-                <Link to="/student?srn=103">SRN 103</Link>
+                <Link to="/student?id=103&name=Charlie&age=22">SRN 103</Link>
             </nav>
 
             <Routes>
