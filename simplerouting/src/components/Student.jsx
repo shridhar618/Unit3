@@ -1,8 +1,11 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 function Student() {
-    const { srn } = useParams();
+
+    const [searchParams] = useSearchParams();
+
+    const srn = searchParams.get("srn");
 
     const studentData = [
         { id: "101", name: "Alice", age: 20, major: "Computer Science" },
@@ -21,24 +24,28 @@ function Student() {
 
     return (
         <div>
-            <h2>Student Details (Conditional Rendering)</h2>
 
-            {student ? (
-                <div>
-                    <p><strong>ID:</strong> {student.id}</p>
-                    <p><strong>Name:</strong> {student.name}</p>
-                    <p><strong>Age:</strong> {student.age}</p>
-                    <p><strong>Major:</strong> {student.major}</p>
-	                </div>
-	            ) : (
-	                <p>No student found with ID: {srn}</p>
-	            )}
+            <h2>Student Details (Query Routing)</h2>
 
-	            <br />
+            {
+                student ? (
+                    <div>
+                        <p><strong>ID:</strong> {student.id}</p>
+                        <p><strong>Name:</strong> {student.name}</p>
+                        <p><strong>Age:</strong> {student.age}</p>
+                        <p><strong>Major:</strong> {student.major}</p>
+                    </div>
+                ) : (
+                    <p>No student found with ID: {srn}</p>
+                )
+            }
 
-	            <Link to="/">Back to Home</Link>
-	        </div>
-	    );
+            <br />
+
+            <Link to="/">Back to Home</Link>
+
+        </div>
+    );
 }
 
 export default Student;

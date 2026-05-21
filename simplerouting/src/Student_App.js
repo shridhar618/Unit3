@@ -1,41 +1,33 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-import Home from "./components/Home-Unpacked";
-import Contact from "./components/Contact";
-import NoPage from "./components/NoPage";
-import Student from "./components/Student";
+function Student() {
 
-function StuApp(){
-    return(
-        <BrowserRouter>
-            <h1>Student Record System</h1>
+    const { srn } = useParams();
 
-            <nav>
-                <Link to="/">Home</Link>
-                <Link to="/student/101">SRN 101</Link>
-                <Link to="/student/102">SRN 102</Link>
-                <Link to="/student/103">SRN 103</Link>
-                <Link to="/student/104">SRN 104</Link>
-                <Link to="/student/105">SRN 105</Link>
-                <Link to="/student/106">SRN 106</Link>
-                <Link to="/student/107">SRN 107</Link>
-                <Link to="/student/108">SRN 108</Link>
-                <Link to="/student/109">SRN 109</Link>
-                <Link to="/student/110">SRN 110</Link>
-            </nav>
+    const studentData = [
+        { srn: "101", name: "Alice", age: 20 },
+        { srn: "102", name: "Bob", age: 21 },
+        { srn: "103", name: "Charlie", age: 22 },
+    ];
 
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/student/:srn" element={<Student />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="*" element={<NoPage />} />
-            </Routes>
+    const student = studentData.find(
+        (s) => s.srn === srn
+    );
 
+    if (!student) {
+        return <h2>Student Not Found</h2>;
+    }
 
-        </BrowserRouter>
+    return (
+        <div>
+            <h2>Student Details</h2>
+
+            <p>SRN: {student.srn}</p>
+            <p>Name: {student.name}</p>
+            <p>Age: {student.age}</p>
+        </div>
     );
 }
 
-
-export default StuApp;
+export default Student;
