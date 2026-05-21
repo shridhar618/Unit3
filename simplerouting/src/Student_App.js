@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-import Home from "./components/Stu_Home";
+import Home from "./components/Home-Unpacked";
 import Contact from "./components/Contact";
 import NoPage from "./components/NoPage";
 import Student from "./components/Student";
