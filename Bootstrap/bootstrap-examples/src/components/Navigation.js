@@ -15,7 +15,7 @@ function NavigationBar() {
       <Container>
 
         {/* Website Title */}
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="http://www.pesuacademy.com">
           PESU MCA
         </Navbar.Brand>
 
